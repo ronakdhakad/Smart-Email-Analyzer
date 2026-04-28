@@ -19,6 +19,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class AuthController {
 
+	
+	  @GetMapping("/")
+	    public String home() {
+	        return "redirect:/login";
+	    }
+	  
+	  
     private final UserService userService;
     private final EmailFetchService emailFetchService;
 
