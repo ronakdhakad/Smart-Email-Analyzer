@@ -20,12 +20,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class AuthController {
 
 	
-	  @GetMapping("/")
-	    public String home() {
-	        return "redirect:/login";
-	    }
-	  
-	  
+//	  @GetMapping("/")
+//	    public String home() {
+//	        return "redirect:/login";
+//	    }
+	
     private final UserService userService;
     private final EmailFetchService emailFetchService;
 
@@ -34,17 +33,17 @@ public class AuthController {
         this.emailFetchService = emailFetchService;
     }
 
-    @GetMapping("/login")
-    public String loginPage(Model model, HttpSession session) {
-        if (session.getAttribute("loggedInUserId") != null) {
-            return "redirect:/emails/inbox";
-        }
-        model.addAttribute("loginForm", new LoginForm());
-        return "login";
-    }
-
-    @PostMapping("/login")
-    public String login(@ModelAttribute("loginForm") LoginForm form,
+	    @GetMapping("/login")
+	    public String loginPage(Model model, HttpSession session) {
+	        if (session.getAttribute("loggedInUserId") != null) {
+	            return "redirect:/emails/inbox";
+	        }
+	        model.addAttribute("loginForm", new LoginForm());
+	        return "login";
+	    }
+	    
+	    @PostMapping("/login")
+	    	public String login(@ModelAttribute("loginForm") LoginForm form,
                         Model model,
                         HttpSession session,
                         RedirectAttributes redirectAttributes) {

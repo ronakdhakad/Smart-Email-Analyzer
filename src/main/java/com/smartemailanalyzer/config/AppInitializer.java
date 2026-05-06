@@ -8,6 +8,10 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  * Registers the Spring DispatcherServlet without using web.xml.
  */
 
+//db.url=jdbc:mysql://localhost:3306/smart_email_analyzer?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+//db.username=root
+//db.password=root@123
+
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
