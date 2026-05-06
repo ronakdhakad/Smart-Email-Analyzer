@@ -10,8 +10,6 @@
 
     <name>Smart Email Analyzer</name>
          
-    <finalName>smart-email-analyzer</finalName>
-         
     <description>Traditional Spring MVC + Hibernate web application for email urgency scoring</description>
 
     <properties>
