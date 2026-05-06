@@ -9,6 +9,10 @@
     <packaging>war</packaging>
 
     <name>Smart Email Analyzer</name>
+
+<build>
+    <finalName>smart-email-analyzer</finalName>
+</build>
     <description>Traditional Spring MVC + Hibernate web application for email urgency scoring</description>
 
     <properties>
