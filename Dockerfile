@@ -14,6 +14,8 @@ FROM tomcat:10.1-jdk17-temurin
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
+RUN sed -i 's/port="8005"/port="-1"/' /usr/local/tomcat/conf/server.xml
+
 COPY --from=build /app/target/smart-email-analyzer.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
