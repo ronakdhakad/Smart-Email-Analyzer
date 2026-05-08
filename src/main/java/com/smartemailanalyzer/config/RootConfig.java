@@ -56,10 +56,15 @@ public class RootConfig {
 
     @Value("${hibernate.jdbc.time_zone}")
     private String jdbcTimeZone;
-
+    
     @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
+    public static PropertySourcesPlaceholderConfigurer propertyConfig() {
+        PropertySourcesPlaceholderConfigurer configurer =
+                new PropertySourcesPlaceholderConfigurer();
+    
+        configurer.setIgnoreUnresolvablePlaceholders(true);
+    
+        return configurer;
     }
 
     @Bean(destroyMethod = "close")
